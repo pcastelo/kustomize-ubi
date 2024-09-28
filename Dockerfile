@@ -9,6 +9,8 @@ RUN dnf install python39 -y \
     && python3 -m pip install --upgrade pip wheel \
     && python3 -m pip install httpie
 
+RUN dnf install git     
+
 RUN wget https://github.com/mikefarah/yq/releases/download/v4.43.1/yq_linux_amd64 -O /usr/local/bin/yq    
 RUN curl -sLO https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.1/kustomize_v5.4.1_linux_amd64.tar.gz \
     && tar -xzf kustomize*.tar.gz \
